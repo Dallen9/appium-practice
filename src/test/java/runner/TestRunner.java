@@ -1,5 +1,6 @@
 package runner;
 
+import io.appium.java_client.HasSettings;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.nativekey.AndroidKey;
@@ -35,18 +36,18 @@ public class TestRunner {
         driver = new AndroidDriver<>(url, capabilities);
         System.out.println("Session ID: " + driver.getSessionId());
     }
-    @AfterClass
-    public void tearDown() {
-        try {
-            TimeUnit.SECONDS.sleep(5);
-            driver.quit();
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-    }
+//    @AfterClass
+//    public void tearDown() {
+//        try {
+//            TimeUnit.SECONDS.sleep(5);
+//            driver.quit();
+//        } catch (InterruptedException e) {
+//            Thread.currentThread().interrupt();
+//        }
+//    }
     @Test
     public void verifyGoogleSearch() throws InterruptedException{
-        String search = "Katherine Flores linkedin";
+        String search = "cat";
         driver.get("https://google.com");
         MobileElement input = driver.findElement(By.xpath("//input[@name=\"q\"]"));
         input.sendKeys(search);

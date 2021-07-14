@@ -9,7 +9,6 @@ import java.io.File;
 import java.net.URL;
 
 public class StartDriverSession {
-
     public static AppiumDriver<MobileElement>  initializeDriver(String platformName) throws Exception {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         // Option to use MobileCapability class instead of typing capability name manually
@@ -25,11 +24,11 @@ public class StartDriverSession {
                 capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "emulator-5554");
                 capabilities.setCapability("avd", "Pixel_3a_API_30_x86");
                 capabilities.setCapability("avdLaunchTimeout", 100000);
-                capabilities.setCapability("appPackage", "io.appium.android.apis");
-                capabilities.setCapability("appActivity", "ApiDemos");
+//                capabilities.setCapability("appPackage", "io.appium.android.apis");
+//                capabilities.setCapability("appActivity", "Api Demos");
                 String andAppUrl = System.getProperty("user.dir") + File.separator + "src" + File.separator + "main" +
                         File.separator + "resources" +  File.separator + "ApiDemos-debug.apk";
-//                capabilities.setCapability(MobileCapabilityType.APP, andAppUrl);
+                capabilities.setCapability(MobileCapabilityType.APP, andAppUrl);
                 return new AndroidDriver<>(url, capabilities);
             case "iOS":
                 capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "XCUITest");
