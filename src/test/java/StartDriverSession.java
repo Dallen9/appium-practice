@@ -19,13 +19,15 @@ public class StartDriverSession {
 
         switch(platformName) {
             case "Android":
+                String browserPath = System.getProperty("user.dir") + File.separator + "src" + File.separator + "main" +
+                    File.separator + "resources" +  File.separator + "chromedriver";
                 capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UIAutomator2");
                 capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "11");
                 capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "emulator-5554");
-                capabilities.setCapability("avd", "Pixel_3a_API_30_x86");
-                capabilities.setCapability("avdLaunchTimeout", 100000);
-//                capabilities.setCapability("appPackage", "io.appium.android.apis");
-//                capabilities.setCapability("appActivity", "Api Demos");
+//                capabilities.setCapability("avd", "Pixel_3a_API_30_x86");
+//                capabilities.setCapability("avdLaunchTimeout", 100000);
+                capabilities.setCapability("appPackage", "io.appium.android.apis");
+                capabilities.setCapability("appActivity", "io.appium.android.apis.ApiDemos");
                 String andAppUrl = System.getProperty("user.dir") + File.separator + "src" + File.separator + "main" +
                         File.separator + "resources" +  File.separator + "ApiDemos-debug.apk";
                 capabilities.setCapability(MobileCapabilityType.APP, andAppUrl);

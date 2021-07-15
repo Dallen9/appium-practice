@@ -8,8 +8,5 @@ public class DifferentWaysOfDefiningElements {
         AppiumDriver<MobileElement> driver = StartDriverSession.initializeDriver("Android");
         GraphicPage graphicPage = new GraphicPage(driver);
         graphicPage.navigateToGraphics();
-//        DifferentWaysOfDefiningElements differentWaysOfDefiningElements = new DifferentWaysOfDefiningElements(driver);
-
-
     }
 }
